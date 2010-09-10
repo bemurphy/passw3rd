@@ -1,0 +1,47 @@
+------------------------------------------------------------------------------
+Manual JDBC Connection
+------------------------------------------------------------------------------
+
+Before:
+
+Datasource ds = new Datasource();
+ds.setPassword("suparSekret");
+
+After:
+
+Datasource ds = new Datasource();
+ds.setPassword(PasswordService.getPassword(USER);
+
+------------------------------------------------------------------------------
+Java properties file
+------------------------------------------------------------------------------
+
+Before:
+
+password=suparSekret
+
+After:
+
+password=${password}
+
+------------------------------------------------------------------------------
+Ruby on Rails config/database.yml
+------------------------------------------------------------------------------
+
+Before:
+
+development:
+  adapter: mysql
+  database: rails_development
+  username: root
+  password: my super secret password
+
+
+After:
+
+development:
+  adapter: mysql
+  database: rails_development
+  username: root
+  password: <%= PasswordService.get_password('foobar_app') -%>
+

@@ -1,0 +1,9 @@
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+bin/passw3rd
+lib/key_loader.rb
+lib/password_client.rb
+lib/password_service.rb
+test/test_password_service.rb

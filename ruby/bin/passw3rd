@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby -w
+
+require 'password_client'
+
