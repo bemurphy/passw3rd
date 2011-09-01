@@ -3,7 +3,7 @@ Manifest.txt
 README.txt
 Rakefile
 bin/passw3rd
-lib/key_loader.rb
-lib/password_client.rb
-lib/password_service.rb
-test/test_password_service.rb
+lib/passw3rd.rb
+lib/passw3rd/key_loader.rb
+lib/passw3rd/password_client.rb
+lib/passw3rd/password_service.rb

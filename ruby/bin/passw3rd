@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby -w
 
-require 'password_client'
+require File.expand_path('../../lib/passw3rd/password_client.rb',  __FILE__)
 
