@@ -43,7 +43,7 @@ module Passw3rd
 
     # generate key/IV
     if gen_key_path
-      ::Passw3rd::KeyLoader.create_key_iv_file(gen_key_path)
+      Passw3rd::KeyLoader.create_key_iv_file(gen_key_path)
       puts "generated keys in #{gen_key_path}"
     end
 
