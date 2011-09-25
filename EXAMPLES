@@ -1,4 +1,24 @@
 ------------------------------------------------------------------------------
+Command line use
+------------------------------------------------------------------------------
+
+Generate key/iv in ~/ by default
+
+passw3rd -k
+
+Create a password file
+
+passw3rd -e 'foobar_app'
+Enter password:
+
+Read a password file
+
+passw3rd -d 'foobar_app'
+
+> "Your password"  
+
+
+------------------------------------------------------------------------------
 Manual JDBC Connection
 ------------------------------------------------------------------------------
 
