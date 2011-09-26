@@ -1,11 +1,2 @@
-/ruby/pkg/passw3rd-0.1.0/test/test_password_service.rb
-/ruby/pkg/passw3rd-0.1.0/README.txt
-/ruby/pkg/passw3rd-0.1.0/Rakefile
-/ruby/pkg/passw3rd-0.1.0/Manifest.txt
-/ruby/pkg/passw3rd-0.1.0/lib/passw3rd/password_service.rb
-/ruby/pkg/passw3rd-0.1.0/lib/passw3rd/password_client.rb
-/ruby/pkg/passw3rd-0.1.0/lib/passw3rd/key_loader.rb
-/ruby/pkg/passw3rd-0.1.0/lib/passw3rd.rb
-/ruby/pkg/passw3rd-0.1.0/History.txt
-/ruby/pkg/passw3rd-0.1.0/bin/passw3rd
-/ruby/pkg/passw3rd-0.1.0/.gemtest
+/pkg
+/java/target/
