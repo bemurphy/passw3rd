@@ -1,5 +1,0 @@
-Pattern PLACEHOLDER = Pattern.compile("\\$\\{.*\\}");
-
-String key = "${asdf}";
-
-System.out.println(PLACEHOLDER.matcher(key).matches());
