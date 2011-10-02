@@ -1,3 +1,7 @@
+=== 0.8.0 / 2011-10-02
+
+Custom key directories
+
 === 0.6.0 / 2011-10-02
 
 Added custom password directories, more tests.  Some code cleanup.  Java version maven site generation.
