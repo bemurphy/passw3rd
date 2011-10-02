@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby -w
 
 require File.expand_path('../../lib/passw3rd',  __FILE__)
-# require File.expand_path('../../lib/passw3rd/password_client.rb',  __FILE__)
+require File.expand_path('../../lib/passw3rd/password_client.rb',  __FILE__)
 

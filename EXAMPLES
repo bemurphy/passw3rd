@@ -4,18 +4,27 @@ Command line use
 
 Generate key/iv in ~/ by default
 
-passw3rd -k
+    $ passw3rd -g
+    generated keys in /Users/user
+
+    $ passw3rd -g ~/Desktop/
+    generated keys in /Users/user/Desktop/
 
 Create a password file
 
-passw3rd -e 'foobar_app'
-Enter password:
+    $ passw3rd -e foobar_app
+    Enter the password: 
+    Wrote password to /Users/neilmatatall/foobar_app
+    $ passw3rd -e foobar_app -p ~/Desktop/
+    Enter the password: 
+    Wrote password to /Users/neilmatatall/Desktop/foobar_app
 
 Read a password file
 
-passw3rd -d 'foobar_app'
-
-> "Your password"  
+    $ passw3rd -d foobar_app
+    The password is: asdf
+    $ passw3rd -d foobar_app -p ~/Desktop/
+    The password is: asdf
 
 
 ------------------------------------------------------------------------------
@@ -47,6 +56,9 @@ password=${password}
 ------------------------------------------------------------------------------
 Ruby on Rails config/database.yml
 ------------------------------------------------------------------------------
+
+initializer:
+Passw3rd::PasswordService.password_file_dir = "passwords"
 
 Before:
 
