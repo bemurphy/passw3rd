@@ -1,7 +1,8 @@
 require 'rubygems'
 require 'test/unit'
 require 'tmpdir'
-require 'SecureRandom'
+require 'active_support/secure_random'
+
 require File.expand_path('../../lib/passw3rd.rb',  __FILE__)
 
 class PasswordServiceTest < Test::Unit::TestCase
