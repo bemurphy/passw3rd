@@ -23,7 +23,7 @@ Some advantages of keeping credentials out of source code are:
 Status
 ------------------------------------------------------------------------------
 
-This project is IN PROGRESS. All features and functionality are not working yet.
+This project is IN PROGRESS. File bugs and feature requests.
 
 
 License
