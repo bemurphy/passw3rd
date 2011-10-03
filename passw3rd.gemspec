@@ -17,6 +17,4 @@ Gem::Specification.new do |s|
   s.files       += Dir.glob("bin/**/*")
   s.files       += Dir.glob("test/**/*")
   s.executables = [ "passw3rd" ]
-  s.add_dependency('active_support')
-
 end
