@@ -11,16 +11,16 @@ module Passw3rd
       end
 
       begin
-        key = IO.readlines(File.expand_path(path + KEY_FILE))
-        iv = IO.readlines(File.expand_path(path + IV_FILE))
+        key = IO.readlines(File.expand_path(path + KEY_FILE))[0]
+        iv = IO.readlines(File.expand_path(path + IV_FILE))[0]
       rescue Errno::ENOENT
         puts "Couldn't read key/iv from #{path}.  Have they been generated?\n"
         raise $!
       end
 
       pair = KeyIVPair.new
-      pair.key = key.pack("H*")
-      pair.iv = iv.pack("H*")
+      pair.key = [key].pack("H*")
+      pair.iv = [iv].pack("H*")
       pair
     end
 
