@@ -1,6 +1,5 @@
-![Build status](/https://secure.travis-ci.org/oreoshake/passw3rd.png)
+![Build status](https://secure.travis-ci.org/oreoshake/passw3rd.png)
 
-------------------------------------------------------------------------------
 Introduction
 ------------------------------------------------------------------------------
 
@@ -20,19 +19,19 @@ Some advantages of keeping credentials out of source code are:
    general. If changing a credential requires you to change code, you are less
    likely to want to do it. 
 
-------------------------------------------------------------------------------
+
 Status
 ------------------------------------------------------------------------------
 
 This project is IN PROGRESS. All features and functionality are not working yet.
 
-------------------------------------------------------------------------------
+
 License
 ------------------------------------------------------------------------------
 
 License: MIT (see LICENSE file)
 
-------------------------------------------------------------------------------
+
 Credits
 ------------------------------------------------------------------------------
 
