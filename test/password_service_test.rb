@@ -11,6 +11,7 @@ class PasswordServiceTest < Test::Unit::TestCase
 
     ::Passw3rd::KeyLoader.create_key_iv_file(Dir.tmpdir)
     ::Passw3rd::PasswordService.key_file_dir = Dir.tmpdir    
+    ::Passw3rd::PasswordService.cipher_name = 'aes-128-cbc'
   end
   
   def test_enc_dec
@@ -41,6 +42,15 @@ class PasswordServiceTest < Test::Unit::TestCase
     decrypted = Passw3rd::PasswordService.get_password("test2")
     assert_equal(@random_string, decrypted)
   end  
+
+  def test_configure_with_block
+    Passw3rd::PasswordService.configure do |c|
+      c.password_file_dir = "/tmp/"
+      c.cipher_name = "aes-256-cbc"
+    end
+    assert_equal(Passw3rd::PasswordService.password_file_dir, "/tmp/")
+    assert_equal(Passw3rd::PasswordService.cipher_name, "aes-256-cbc")
+  end
   
   def test_gen_key
     enc = ::Passw3rd::PasswordService.encrypt(@random_string)
