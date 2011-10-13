@@ -3,12 +3,12 @@ module Passw3rd
     class << self
       attr_writer :password_file_dir
       def password_file_dir
-        @password_file_dir || ENV["HOME"]
+        @password_file_dir || ENV.fetch("HOME")
       end
 
       attr_writer :key_file_dir
       def key_file_dir
-        @key_file_dir || ENV["HOME"]
+        @key_file_dir || ENV.fetch("HOME")
       end
 
       attr_writer :cipher_name
