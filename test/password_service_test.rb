@@ -20,6 +20,14 @@ class PasswordServiceTest < Test::Unit::TestCase
     assert_equal(@random_string, dec)
   end
 
+  def test_enc_raise_on_blank_password
+    assert_raise(ArgumentError) { ::Passw3rd::PasswordService.encrypt("") }
+  end
+
+  def test_enc_raise_on_nil_password
+    assert_raise(ArgumentError) { ::Passw3rd::PasswordService.encrypt(nil) }
+  end
+
   def test_set_and_get_password
     password_file = ::Passw3rd::PasswordService.write_password_file(@random_string, "test")
     decrypted = Passw3rd::PasswordService.get_password("test")

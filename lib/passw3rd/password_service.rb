@@ -25,7 +25,7 @@ module Passw3rd
     end
 
     def self.encrypt(password, key_path = nil)
-      raise "password cannot be blank" if password.empty?
+      raise ArgumentError, "password cannot be blank" if password.to_s.empty?
 
       pair = KeyLoader.load(key_path || @@key_file_dir)
       cipher = OpenSSL::Cipher::Cipher.new('aes-128-cbc')
