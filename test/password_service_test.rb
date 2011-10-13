@@ -1,14 +1,13 @@
 require 'rubygems'
 require 'test/unit'
 require 'tmpdir'
-require 'SecureRandom'
 
 require File.expand_path('../../lib/passw3rd.rb',  __FILE__)
 
 class PasswordServiceTest < Test::Unit::TestCase
   def setup
-    random_num = SecureRandom.random_number(5000)
-    @random_string = SecureRandom.random_bytes(5000 + random_num)
+    random_num = sudorandumb
+    @random_string = sudorandumb
 
     ::Passw3rd::KeyLoader.create_key_iv_file(Dir.tmpdir)
     ::Passw3rd::PasswordService.key_file_dir = Dir.tmpdir    
@@ -40,5 +39,9 @@ class PasswordServiceTest < Test::Unit::TestCase
     dec = ::Passw3rd::PasswordService.decrypt(enc)
     
     assert_equal(@random_string, dec)
+  end
+  
+  def sudorandumb
+    Digest::SHA1.hexdigest(Time.now.to_s.split(//).sort_by{rand}.join)
   end
 end

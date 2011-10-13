@@ -1,12 +1,18 @@
-=== 0.8.0 / 2011-10-02
+=== 0.0.11 / 2011-10-12
+
+Keys/ivs were being written as arrays, broke openssl command line compatibility:
+$ openssl enc -e -aes-256-cbc -K `cat ~/.passw3rd-encryptionKey`  -iv `cat ~/.passw3rd-encryptionIV` -in README.md -out test.out
+$ openssl enc -d -aes-256-cbc -K `cat ~/.passw3rd-encryptionKey`  -iv `cat ~/.passw3rd-encryptionIV` -out README.md -in test.out
+
+=== 0.0.8 / 2011-10-02
 
 Custom key directories
 
-=== 0.6.0 / 2011-10-02
+=== 0.0.6 / 2011-10-02
 
 Added custom password directories, more tests.  Some code cleanup.  Java version maven site generation.
 
-=== 0.1.0 / 2010-06-07
+=== 0.0.1 / 2010-06-07
 
 * 1 major enhancement
 

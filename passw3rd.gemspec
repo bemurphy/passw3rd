@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.email       = ['neil.matatall@gmail.com']
   s.homepage    = 'https://github.com/oreoshake/passw3rd'
   
-  s.files       = %w( README.md LICENSE EXAMPLES History.txt )
+  s.files       = %w( README.md LICENSE EXAMPLES.md History.txt )
   s.files       += Dir.glob("lib/**/*")
   s.files       += Dir.glob("bin/**/*")
   s.files       += Dir.glob("test/**/*")

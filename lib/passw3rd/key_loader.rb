@@ -34,8 +34,8 @@ module Passw3rd
       key = cipher.random_key
 
       begin
-        File.open(path + KEY_FILE, 'w') {|f| f.write(key.unpack("H*")) }
-        File.open(path + IV_FILE, 'w') {|f| f.write(iv.unpack("H*")) }
+        File.open(path + KEY_FILE, 'w') {|f| f.write(key.unpack("H*").join) }
+        File.open(path + IV_FILE, 'w') {|f| f.write(iv.unpack("H*").join) }
       rescue
         puts "Couldn't write key/IV to #{path}\n"
         raise $!
