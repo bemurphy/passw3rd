@@ -27,11 +27,7 @@ module Passw3rd
     def self.encrypt(password, key_path = nil)
       raise ArgumentError, "password cannot be blank" if password.to_s.empty?
 
-      pair = KeyLoader.load(key_path || @@key_file_dir)
-      cipher = OpenSSL::Cipher::Cipher.new('aes-128-cbc')
-      cipher.encrypt
-      cipher.key = pair.key
-      cipher.iv = pair.iv
+      cipher = cipher_setup(:encrypt, key_path || @@key_file_dir)
       begin
         e = cipher.update(password)
         e << cipher.final
@@ -42,11 +38,7 @@ module Passw3rd
     end
 
     def self.decrypt(cipher_text, key_path = nil)
-      pair = KeyLoader.load(key_path || @@key_file_dir)
-      cipher = OpenSSL::Cipher::Cipher.new('aes-128-cbc')
-      cipher.decrypt
-      cipher.key = pair.key
-      cipher.iv = pair.iv
+      cipher = cipher_setup(:decrypt, key_path || @@key_file_dir)
       begin
         d = cipher.update(cipher_text)
         d << cipher.final
@@ -54,6 +46,17 @@ module Passw3rd
         puts "Coudln't decrypt password.  Are you using the right keys?"
         raise err
       end
+    end
+
+    protected
+
+    def self.cipher_setup(method, key_path)
+      pair = KeyLoader.load(key_path)
+      cipher = OpenSSL::Cipher::Cipher.new('aes-128-cbc')
+      cipher.send(method)
+      cipher.key = pair.key
+      cipher.iv = pair.iv
+      cipher
     end
   end
 end
