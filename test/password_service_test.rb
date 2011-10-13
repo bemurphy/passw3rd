@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'test/unit'
 require 'tmpdir'
-require 'active_support/secure_random'
+require 'SecureRandom'
 
 require File.expand_path('../../lib/passw3rd.rb',  __FILE__)
 
